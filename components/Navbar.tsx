@@ -1,8 +1,12 @@
+"use client"
+
 import React from 'react'
 import Image from 'next/image'
 import logo from '@/public/deepseek_wordmark.svg'
 import Link from 'next/link'
 import { Button } from './ui/button'
+import { useRouter } from 'next/navigation'
+
 const MenuLinks = [
     {
         label: 'Home',
@@ -26,6 +30,7 @@ const MenuLinks = [
     },
 ]
 const Navbar = () => {
+    const router = useRouter()
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-white h-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,8 +44,8 @@ const Navbar = () => {
                         ))}
                     </div>
                     <div className="flex items-center gap-4">
-                        <Button variant="ghost">Entrar</Button>
-                        <Button className='bg-blue-500 hover:bg-blue-600'>Cadastrar</Button>
+                        <Button variant="ghost" onClick={() => { router.push('/registro') }}>Entrar</Button>
+                        <Button className='bg-blue-500 hover:bg-blue-600' onClick={() => { router.push('/registro') }}>Cadastrar</Button>
                     </div>
                 </div>
             </div>

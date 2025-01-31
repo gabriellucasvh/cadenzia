@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
+import Image from "next/image"
 
 export default function LoginSignup() {
   const [isLogin, setIsLogin] = useState(true)
@@ -86,7 +87,19 @@ export default function LoginSignup() {
             </Button>
           </form>
 
-          <div className="mt-6 text-center">
+          <div className="relative flex flex-col items-center justify-center w-full pt-3">
+            <div>
+            <span className="bg-white px-4 text-gray-500">ou</span>
+            </div>
+            <div className="flex gap-4">
+            <Button variant={'ghost'} size={'icon'}><Image src="/logos/google.svg" alt="Google" width={24} height={24} /></Button>
+            <Button variant={'ghost'} size={'icon'}><Image src="/logos/facebook.svg" alt="Google" width={24} height={24} /></Button>
+            <Button variant={'ghost'} size={'icon'}><Image src="/logos/apple.svg" alt="Google" width={20} height={20} /></Button>
+            </div>
+          </div>
+
+
+          <div className="text-center">
             <Button variant="link" onClick={() => setIsLogin(!isLogin)} className="text-blue-600 hover:text-blue-700">
               {isLogin ? "Não tem uma conta? Cadastre-se" : "Já tem uma conta? Entre agora"}
             </Button>
