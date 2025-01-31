@@ -6,7 +6,7 @@ import SocialMarcas from '@/components/sections/SocialMarcas';
 import Navbar from '@/components/Navbar';
 export default function Home() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto font-sans">
       <Navbar />
       <Inicio />
       <Funcionalidades />
